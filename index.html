@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'rel='stylesheet'> 
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Lunnar</title>
+</head>
+<body>
+    <main class="container">
+        <form id="login-form">
+            <h1>Login Lunnar</h1>
+            <div class="input-box">
+            <input placeholder="Usuário" type="text" id="username" required>
+            <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+            <input placeholder="Senha" type="password" id="password" required>
+            <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <div class="lembrar-esqueceu">
+            <label>
+                 <input type="checkbox">
+                 Lembrar senha
+            </label>
+            <a href="#">Esqueci a senha</a>
+        </div>
+
+        <button type="submit" class="login">Login</button>
+
+        <div class="registro">
+            <p>Não tem uma conta? <a href="#"> Cadastre-se</a></p>
+        </div>
+        </form>
+    </main>   
+    <script>
+  document.getElementById('login-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    const validUser = "adm";
+    const validPass = "12345";
+
+    if (username === validUser && password === validPass) {
+      alert("Login bem-sucedido!");
+      window.location.href = "dashboard.html"
+    } else {
+      alert("Ah não! usuário ou senha incorretos.");
+    }
+  });
+</script>
+</body>
+</html>
